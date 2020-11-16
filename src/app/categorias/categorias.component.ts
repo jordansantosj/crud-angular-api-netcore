@@ -19,7 +19,6 @@ export class CategoriasComponent implements OnInit {
   }
 
   cadastrar(){
-    console.log(this.categoria)
       this.categoriasService.cadastrarCategoria(this.categoria).subscribe(categoria => {
           this.categoria = new CategoriaModel;
           this.listarCategorias();
@@ -37,7 +36,7 @@ export class CategoriasComponent implements OnInit {
   }
 
   atualizar(id: number){
-    console.log(this.categoria)
+    this.categoria.id = id;
     this.categoriasService.atualizarCategoria(id, this.categoria).subscribe(categoria => {
         this.categoria = new CategoriaModel;
         this.listarCategorias();

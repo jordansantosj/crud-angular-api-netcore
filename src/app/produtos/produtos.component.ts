@@ -18,7 +18,6 @@ export class ProdutosComponent implements OnInit {
   }
 
   cadastrar(){
-    console.log(this.produto)
       this.produtosService.cadastrarProduto(this.produto).subscribe(produto => {
           this.produto = new ProdutoModel();
           this.listarProdutos();
